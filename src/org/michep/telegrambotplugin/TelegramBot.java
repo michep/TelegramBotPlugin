@@ -36,8 +36,10 @@ public class TelegramBot extends TelegramLongPollingBot {
 		values.put("Timestamp", update.getMessage().getDate().toString());
 		if (update.getMessage().getContact() != null)
 			values.put("ContactPhoneNumber", update.getMessage().getContact().getPhoneNumber());
-		if (update.getMessage().hasDocument() == true)
+		if (update.getMessage().hasDocument() == true) {
 			values.put("FileID", update.getMessage().getDocument().getFileId());
+			values.put("FileName", update.getMessage().getDocument().getFileName());
+		}
 		plugin.createTransaction(values);
 	}
 
