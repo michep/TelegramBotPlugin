@@ -54,6 +54,7 @@ public class Config {
 		fields.put(536870915, "Text");
 		fields.put(536870919, "Timestamp");
 		fields.put(536870930, "ContactPhoneNumber");
+		fields.put(536870937, "ContactFullName");
 		fields.put(536870931, "MessageID");
 		fields.put(536870932, "FileID");
 		fields.put(536870935, "FileName");
