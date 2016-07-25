@@ -34,9 +34,10 @@ public class TelegramBot extends TelegramLongPollingBot {
 		values.put("ChatID", update.getMessage().getChatId().toString());
 		values.put("UserID", update.getMessage().getFrom().getId().toString());
 		values.put("Timestamp", update.getMessage().getDate().toString());
-		if (update.getMessage().getContact() != null) {
+		if (update.getMessage().getContact() != null)
 			values.put("ContactPhoneNumber", update.getMessage().getContact().getPhoneNumber());
-		}
+		if (update.getMessage().hasDocument() == true)
+			values.put("FileID", update.getMessage().getDocument().getFileId());
 		plugin.createTransaction(values);
 	}
 
