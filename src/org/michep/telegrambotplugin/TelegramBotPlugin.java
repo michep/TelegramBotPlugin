@@ -36,11 +36,9 @@ public class TelegramBotPlugin implements ARFilterAPIPluggable {
 	}
 
 	public void onEvent(ARPluginContext ctx, int arg1) throws ARException {
-
 	}
 
 	public void terminate(ARPluginContext ctx) throws ARException {
-
 	}
 
 	public List<Value> filterAPICall(ARPluginContext ctx, List<Value> args) throws ARException {
@@ -72,7 +70,7 @@ public class TelegramBotPlugin implements ARFilterAPIPluggable {
 		kbMarkup.setKeyboard(kbRowList);
 		kbMarkup.setOneTimeKeyboad(true);
 		kbMarkup.setResizeKeyboard(true);
-		message.setReplayMarkup(kbMarkup);
+		message.setReplyMarkup(kbMarkup);
 		sendMessage(ctx, message);
 		List<Value> valueList = new ArrayList<Value>();
 		valueList.add(new Value("OK"));
@@ -84,8 +82,7 @@ public class TelegramBotPlugin implements ARFilterAPIPluggable {
 		message.setChatId(chatId);
 		message.setText(text);
 		ReplyKeyboardHide kbHide = new ReplyKeyboardHide();
-		kbHide.setHideKeyboard(true);
-		message.setReplayMarkup(kbHide);
+		message.setReplyMarkup(kbHide);
 		sendMessage(ctx, message);
 		List<Value> valueList = new ArrayList<Value>();
 		valueList.add(new Value("OK"));
