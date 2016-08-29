@@ -14,12 +14,12 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 	private String botName;
 	private String botToken;
-	//private ARPluginContext ctx;
+	// private ARPluginContext ctx;
 	private static TelegramBot botInstance;
 	private TelegramBotPlugin plugin;
 
 	private TelegramBot(ARPluginContext ctx, String botName, String botToken, TelegramBotPlugin plugin) {
-		//this.ctx = ctx;
+		// this.ctx = ctx;
 		this.botName = botName;
 		this.botToken = botToken;
 		this.plugin = plugin;

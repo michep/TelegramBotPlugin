@@ -77,7 +77,7 @@ public class AREntry {
 	}
 
 	public void setFieldValues(Map<String, String> values) {
-		for(String fieldName : values.keySet())
+		for (String fieldName : values.keySet())
 			setFieldValue(fieldName, values.get(fieldName));
 	}
 
@@ -95,13 +95,13 @@ public class AREntry {
 		this.entry = entry;
 	}
 
-	private int getFieldID (String fieldName) {
-		for(int id: fields.keySet())
-			if(fields.get(id).equals(fieldName))
+	private int getFieldID(String fieldName) {
+		for (int id : fields.keySet())
+			if (fields.get(id).equals(fieldName))
 				return id;
 		return -1;
 	}
-	
+
 	private int getFieldObjIndex(int fieldID) {
 		int i;
 		for (i = 0; i < fieldList.size(); i++)

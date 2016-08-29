@@ -20,7 +20,7 @@ public class Config {
 	private ARForm formTransaction;
 	// private ARForm formSessions;
 
-	public Config(ARPluginContext ctx)  throws ARException {
+	public Config(ARPluginContext ctx) throws ARException {
 		this.ctx = ctx;
 		props = new Properties();
 		formConfig = createConfigForm();
@@ -45,12 +45,12 @@ public class Config {
 
 	}
 
-	private ARForm createTransactionForm() throws ARException  {
+	private ARForm createTransactionForm() throws ARException {
 		HashMap<Integer, String> fields = new HashMap<Integer, String>();
 		fields.put(7, "Status");
 		fields.put(536870916, "Type");
 		fields.put(536870913, "ChatID");
-		fields.put(536870914, "UserID");		
+		fields.put(536870914, "UserID");
 		fields.put(536870915, "Text");
 		fields.put(536870919, "Timestamp");
 		fields.put(536870930, "ContactPhoneNumber");
@@ -60,7 +60,7 @@ public class Config {
 		fields.put(536870935, "FileName");
 		return new ARForm(ARAdapter.getInstance(ctx), "TBOT:Transaction", fields);
 	}
-	
+
 	private void loadConfig() {
 		try {
 			List<AREntry> arentries = formConfig.getEntries();
