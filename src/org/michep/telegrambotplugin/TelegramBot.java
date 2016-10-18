@@ -3,7 +3,7 @@ package org.michep.telegrambotplugin;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.telegram.telegrambots.TelegramApiException;
+import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;

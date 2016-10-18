@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.telegram.telegrambots.TelegramApiException;
+import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.api.methods.GetFile;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.File;
@@ -94,7 +94,7 @@ public class TelegramBotPlugin implements ARFilterAPIPluggable {
 			bot.sendMessage(message);
 		} catch (TelegramApiException e) {
 			ctx.logMessage(ARPluginContext.PLUGIN_LOG_LEVEL_ERROR, e.toString());
-			StatusInfo statusInfo = new StatusInfo(Constants.AR_RETURN_ERROR, 10000, e.getMessage(), e.getApiResponse());
+			StatusInfo statusInfo = new StatusInfo(Constants.AR_RETURN_ERROR, 10000, e.getMessage(), "");
 			List<StatusInfo> statusList = new ArrayList<StatusInfo>();
 			statusList.add(statusInfo);
 			ARException are = new ARException(statusList);
@@ -122,7 +122,7 @@ public class TelegramBotPlugin implements ARFilterAPIPluggable {
 			StatusInfo statusInfo;
 			if (e instanceof TelegramApiException) {
 				TelegramApiException te = (TelegramApiException) e;
-				statusInfo = new StatusInfo(Constants.AR_RETURN_ERROR, 10000, te.getMessage(), te.getApiResponse());
+				statusInfo = new StatusInfo(Constants.AR_RETURN_ERROR, 10000, te.getMessage(), "");
 			} else
 				statusInfo = new StatusInfo(Constants.AR_RETURN_ERROR, 10000, e.getMessage());
 			List<StatusInfo> statusList = new ArrayList<StatusInfo>();
